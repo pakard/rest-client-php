@@ -1,0 +1,22 @@
+{
+    "name": "antavo/rest-client-php",
+    "description": "A rather straightforward and lightweight, yet flexible helper class to perform operations on a RESTful API with cURL -- or with any custom transport implementation",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "authors": [
+        {
+            "name": "plastik",
+            "email": "gabor@antavo.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pakard\\RestClient\\": "src/"
+        }
+    }
+}
