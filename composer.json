@@ -14,9 +14,11 @@
     "require": {
         "php": ">=5.5"
     },
+    "suggest": {
+        "ext-xml": "To parse XML API response"
+    },
     "autoload": {
         "psr-4": {
             "Pakard\\RestClient\\": "src/"
-        }
-    }
+        }}
 }
