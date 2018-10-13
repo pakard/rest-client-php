@@ -15,7 +15,7 @@
         "php": ">=5.5"
     },
     "suggest": {
-        "ext-xml": "To parse XML API response"
+        "ext-xml": "*"
     },
     "autoload": {
         "psr-4": {
