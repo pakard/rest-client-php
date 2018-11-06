@@ -393,4 +393,15 @@ interface ResponseInterface {
      * @return mixed
      */
     public function getBody();
+
+    /**
+     * @return float
+     */
+    public function getElapsedTime();
+
+    /**
+     * @param float $time
+     * @return $this
+     */
+    public function setElapsedTime($time);
 }

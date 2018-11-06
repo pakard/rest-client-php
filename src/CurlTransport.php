@@ -97,6 +97,7 @@ class CurlTransport implements TransportInterface {
         $response
             ->setStatusCode($info['http_code'])
             ->setContentType($info['content_type'])
+            ->setElapsedTime($info['total_time'])
             ->setRawHeaders($headers)
             ->setRawBody($result);
 

@@ -31,6 +31,11 @@ class Response implements ResponseInterface {
     protected $_rawBody;
 
     /**
+     * @var float
+     */
+    protected $_elapsedTime;
+
+    /**
      * @return int
      */
     public function getStatusCode() {
@@ -99,6 +104,21 @@ class Response implements ResponseInterface {
      */
     public function getBody() {
         return $this->parseBody($this->getRawBody(), $this->getContentType());
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getElapsedTime() {
+        return $this->_elapsedTime;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setElapsedTime($time) {
+        $this->_elapsedTime = $time;
+        return $this;
     }
 
     /**
