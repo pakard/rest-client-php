@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "php": ">=5.5"
+        "php": ">=5.5",
+        "ext-curl": "*"
     },
     "suggest": {
         "ext-xml": "*"
