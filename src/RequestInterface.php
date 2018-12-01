@@ -57,12 +57,12 @@ interface RequestInterface {
     public function setUrl($url);
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getBody();
 
     /**
-     * @param string $body
+     * @param mixed $body
      * @return $this
      */
     public function setBody($body);
