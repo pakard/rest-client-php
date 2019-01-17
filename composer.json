@@ -1,5 +1,5 @@
 {
-    "name": "antavo/rest-client-php",
+    "name": "pakard/rest-client-php",
     "description": "A rather straightforward and lightweight, yet flexible helper class to perform operations on a RESTful API with cURL -- or with any custom transport implementation",
     "type": "library",
     "require-dev": {
