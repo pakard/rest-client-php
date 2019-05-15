@@ -51,8 +51,13 @@ class CurlTransport implements TransportInterface {
         // Returning response string instead of putting it out directly.
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
-        // Default SSL setting is out of date.
-        curl_setopt($ch, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
+        // If the PHP7 SSL constant is defined, going with that; otherwise, using the
+        // deprecated SSL setting.
+        if (defined(CURL_SSLVERSION_TLSv1)) {
+            curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1);
+        } else {
+            curl_setopt($ch, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
+        }
 
         // Recording request headers too.
         curl_setopt($ch, CURLINFO_HEADER_OUT, TRUE);
