@@ -41,14 +41,6 @@ class CurlTransport implements TransportInterface {
     public function send(RequestInterface $request, ResponseInterface $response) {
         $ch = curl_init();
 
-        // If the PHP7 SSL constant is defined, going with that; otherwise, using the
-        // deprecated SSL setting.
-        if (defined(CURL_SSLVERSION_TLSv1)) {
-            curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1);
-        } else {
-            curl_setopt($ch, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
-        }
-
         // Applying custom options to resource.
         // Using a foreach loop to make sure remaining options are applied in
         // case of an errorous option/value somewhere in between.
