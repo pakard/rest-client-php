@@ -110,6 +110,8 @@ class Request implements RequestInterface {
                 }
 
                 return NULL;
+            case 'multipart/form-data':
+                return $this->getBody();
             case 'application/x-www-form-urlencoded':
             default:
                 if (is_string($body = $this->getBody())) {

@@ -82,7 +82,10 @@ class CurlTransport implements TransportInterface {
         if (Request::isBodyAllowed($request->getMethod())) {
             $request->setBodySent($body = $request->encodeBody());
             curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-            curl_setopt($ch, CURLOPT_POST, TRUE);
+
+            if ($this->getOption(CURLOPT_POST) === NULL) {
+                curl_setopt($ch, CURLOPT_POST, TRUE);
+            }
         }
 
         $result = curl_exec($ch);
